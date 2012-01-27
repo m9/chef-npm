@@ -9,7 +9,9 @@ This cookbook depends on https://github.com/mdxp/cookbooks/tree/master/nodejs/
 
 ##ATTRIBUTES:
 The only attribute default['npm']['version'] specifies a version of npm should be installed.
+
 _NOTE:_ this cookbook will not work with npm <= 1.0.0
+
 ##USAGE:
 Use recipe['npm'] to install npm it self. 
 To install some packge system-wide use

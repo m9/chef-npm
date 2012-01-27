@@ -1,4 +1,5 @@
 # Cookbook for Node Package Manager
+http://community.opscode.com/cookbooks/npm
 
 ##DESCRIPTION:
 This cookbook grown up from mdxp's nodejs::npm recipe

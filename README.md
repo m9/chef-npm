@@ -34,7 +34,7 @@ To install some package under your project root try to:
 	  action :install_local
 	end
 	
-To uninstall some package – obviously you can do something like
+To uninstall some package - obviously you can do something like
 
     npm_package "bad_one" do
 	  version "0.3.2"

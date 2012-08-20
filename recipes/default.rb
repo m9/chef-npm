@@ -34,19 +34,5 @@ bash "install npm - package manager for node" do
     curl -L http://registry.npmjs.org/npm/-/npm-#{node[:npm][:version]}.tgz | tar xzf - --strip-components=1 && \
     make uninstall dev
   EOF
-  not_if "#{node[:nodejs][:dir]}/bin/npm -v 2>&1 | grep '#{node[:nodejs][:npm]}'"
-end
-
-npm_package "xml@0.0.7"
-
-npm_package "xml" do
-  version "0.0.7"
-  action :install
-end
-
-
-npm_package "xml" do
-  version "0.0.2"
-  path "/tmp/t"
-  action :install_local
+  not_if "#{node[:nodejs][:dir]}/bin/npm -v 2>&1 | grep '#{node[:npm][:version]}'"
 end

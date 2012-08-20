@@ -36,17 +36,3 @@ bash "install npm - package manager for node" do
   EOF
   not_if "#{node[:nodejs][:dir]}/bin/npm -v 2>&1 | grep '#{node[:nodejs][:npm]}'"
 end
-
-npm_package "xml@0.0.7"
-
-npm_package "xml" do
-  version "0.0.7"
-  action :install
-end
-
-
-npm_package "xml" do
-  version "0.0.2"
-  path "/tmp/t"
-  action :install_local
-end

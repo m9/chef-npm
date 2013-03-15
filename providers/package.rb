@@ -16,6 +16,15 @@ action :install_local do
   end
 end
 
+action :install_from_json do
+  path = new_resource.path
+  cmd  = "npm install"
+  execute "install NPM packages from package.json at #{path}" do
+    cwd path
+    command cmd
+  end
+end
+
 action :uninstall do
   cmd  = "npm -g uninstall #{new_resource.name}"
   cmd += "@#{new_resource.version}" if new_resource.version

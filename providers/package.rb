@@ -1,35 +1,41 @@
+# encoding: utf-8
+
 action :install do
-  cmd  = "npm -g install #{new_resource.name}"
-  cmd += "@#{new_resource.version}" if new_resource.version
+  pkg_id = new_resource.name
+  pkg_id += "@#{new_resource.version}" if new_resource.version
   execute "install NPM package #{new_resource.name}" do
-    command cmd
+    command "npm -g install #{pkg_id}"
+    not_if "npm -g ls 2> /dev/null | grep '^[├└]─[─┬] #{pkg_id}'"
   end
 end
 
 action :install_local do
   path = new_resource.path if new_resource.path
-  cmd  = "npm install #{new_resource.name}"
-  cmd += "@#{new_resource.version}" if new_resource.version
+  pkg_id = new_resource.name
+  pkg_id += "@#{new_resource.version}" if new_resource.version
   execute "install NPM package #{new_resource.name} into #{path}" do
     cwd path
-    command cmd
+    command "npm install #{pkg_id}"
+    not_if "cd #{path} && npm ls 2> /dev/null | grep '^[├└]─[─┬] #{pkg_id}'"
   end
 end
 
 action :uninstall do
-  cmd  = "npm -g uninstall #{new_resource.name}"
-  cmd += "@#{new_resource.version}" if new_resource.version
+  pkg_id = new_resource.name
+  pkg_id += "@#{new_resource.version}" if new_resource.version
   execute "uninstall NPM package #{new_resource.name}" do
-    command cmd
+    command "npm -g uninstall #{pkg_id}"
+    only_if "npm -g ls 2> /dev/null | grep '^[├└]─[─┬] #{pkg_id}'"
   end
 end
 
 action :uninstall_local do
   path = new_resource.path if new_resource.path
-  cmd  = "npm uninstall #{new_resource.name}"
-  cmd += "@#{new_resource.version}" if new_resource.version
+  pkg_id = new_resource.name
+  pkg_id += "@#{new_resource.version}" if new_resource.version
   execute "uninstall NPM package #{new_resource.name} from #{path}" do
     cwd path
-    command cmd
+    command "npm uninstall #{pkg_id}"
+    only_if "cd #{path} && npm ls 2> /dev/null | grep '^[├└]─[─┬] #{pkg_id}'"
   end
 end

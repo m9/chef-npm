@@ -2,6 +2,6 @@
     "type": "chef-solo",
     "ami": "ami-e7582d8e",
     "run_list": [
-        "recipe[npm::default]"
+        "recipe[chef-npm::default]"
     ]
 }

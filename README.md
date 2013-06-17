@@ -33,6 +33,13 @@ To install some package under your project root try to:
 	  path "/your/project/path/goes/here"
 	  action :install_local
 	end
+
+or
+
+	npm_package do
+  	  path "/path/to/code"
+  	  action :install_from_json
+	end
 	
 To uninstall some package - obviously you can do something like
 
@@ -48,6 +55,7 @@ or
 	  path "/your/project/path/goes/here"
 	  action :uninstall_local
 	end
+
 
 ## TODO
 - wrap other features of npm to LWRP

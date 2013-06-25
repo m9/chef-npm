@@ -1,3 +1,6 @@
+[![Build Status](https://recipe-tester.com/repo/spulec/chef-npm/badge.png)](https://recipe-tester.com/repo/spulec/chef-npm/)
+
+
 # Cookbook for Node Package Manager
 http://community.opscode.com/cookbooks/npm
 

@@ -19,4 +19,5 @@
 #
 
 default['npm']['version'] = '1.1.0-3'
+default['npm']['package_url'] = "http://registry.npmjs.org/npm/-/npm-#{npm[:version]}.tgz"
 #default['npm'][''] = ''

@@ -18,5 +18,6 @@
 # limitations under the License.
 #
 
-default['npm']['version'] = '1.3.15'
+default['npm']['version'] = '1.3.15' # can be 'latest'
+default['npm']['url']     = nil # Auto determined via version
 #default['npm'][''] = ''

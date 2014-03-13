@@ -24,7 +24,7 @@ end
 
 action :install_from_json do
   path = new_resource.path
-  cmd  = "npm install"
+  cmd  = 'npm install'
   execute "install NPM packages from package.json at #{path}" do
     cwd path
     command cmd

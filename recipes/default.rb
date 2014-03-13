@@ -21,13 +21,13 @@
 # limitations under the License.
 #
 
-include_recipe "nodejs"
+include_recipe 'nodejs'
 
-package "curl"
+package 'curl'
 
-bash "install npm - package manager for node" do
-  cwd "/usr/local/src"
-  user "root"
+bash 'install npm - package manager for node' do
+  cwd '/usr/local/src'
+  user 'root'
   code <<-EOF
     mkdir -p npm-v#{node['npm']['version']} && \
     cd npm-v#{node['npm']['version']}

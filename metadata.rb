@@ -18,12 +18,12 @@
 # limitations under the License.
 #
 
-maintainer       "Sergey Balbeko"
-maintainer_email "sergey@balbeko.com"
-license          "Apache License, Version 2.0"
-description      "Installs/Configures npm"
+maintainer       'Sergey Balbeko'
+maintainer_email 'sergey@balbeko.com'
+license          'Apache License, Version 2.0'
+description      'Installs/Configures npm'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "0.1.2"
-name             "npm"
+version          '0.1.2'
+name             'npm'
 
-depends "nodejs"
+depends 'nodejs'

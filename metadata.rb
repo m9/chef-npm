@@ -27,3 +27,4 @@ version          "0.1.2"
 name             "npm"
 
 depends "nodejs"
+depends 'ark'

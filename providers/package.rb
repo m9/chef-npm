@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+use_inline_resources if defined?(use_inline_resources)
+
 action :install do
   pkg_id = new_resource.name
   pkg_id += "@#{new_resource.version}" if new_resource.version
@@ -22,7 +24,7 @@ end
 
 action :install_from_json do
   path = new_resource.path
-  cmd  = "npm install"
+  cmd  = 'npm install'
   execute "install NPM packages from package.json at #{path}" do
     cwd path
     command cmd

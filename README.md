@@ -42,6 +42,8 @@ or
 	npm_package do
   	  path "/path/to/code"
   	  action :install_from_json
+  	  user someuser # optional, defaults to root
+  	  group somegroup # optional, defaults to root
 	end
 	
 To uninstall some package - obviously you can do something like

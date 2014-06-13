@@ -25,8 +25,12 @@ end
 action :install_from_json do
   path = new_resource.path
   cmd  = 'npm install'
+  user_dir = Etc.getpwnam(new_resource.user).dir if new_resource.user
   execute "install NPM packages from package.json at #{path}" do
     cwd path
+    user new_resource.user if new_resource.user
+    group new_resource.group if new_resource.group
+    environment({ 'HOME' => user_dir })
     command cmd
   end
 end

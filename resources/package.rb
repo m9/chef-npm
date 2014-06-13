@@ -24,6 +24,8 @@ actions :install, :install_local, :install_from_json, :uninstall, :uninstall_loc
 attribute :name, :name_attribute => true
 attribute :version, :default => nil
 attribute :path, :default => nil
+attribute :user, :kind_of => String, :default => "root"
+attribute :group, :kind_of => String, :default => "root"
 
 def initialize(*args)
   super

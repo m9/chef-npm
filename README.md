@@ -39,7 +39,7 @@ To install some package under your project root try to:
 
 or
 
-	npm_package do
+	npm_package "install_package_json" do
   	  path "/path/to/code"
   	  action :install_from_json
 	end

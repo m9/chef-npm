@@ -18,5 +18,5 @@
 # limitations under the License.
 #
 
-default['npm']['version'] = '1.4'
+default['npm']['version'] = '1.4.25'
 # default['npm'][''] = ''
